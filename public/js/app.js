@@ -19167,7 +19167,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
-    name: String
+    name: String,
+    frameworks: Array
   }
 });
 
