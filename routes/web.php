@@ -19,9 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function() {
+    sleep(2);
+    
     return Inertia::render('Users');
 });
 
-Route::get('/users', function() {
+Route::get('/settings', function() {
     return Inertia::render('Settings');
 });
