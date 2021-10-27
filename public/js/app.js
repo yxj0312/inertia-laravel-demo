@@ -19428,7 +19428,10 @@ __webpack_require__.r(__webpack_exports__);
     }).use(plugin).mount(el);
   }
 });
-_inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__.InertiaProgress.init();
+_inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__.InertiaProgress.init({
+  color: 'red',
+  showSpinner: true
+});
 
 /***/ }),
 
