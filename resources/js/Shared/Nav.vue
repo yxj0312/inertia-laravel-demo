@@ -11,7 +11,7 @@
                 <Link href="/settings">Settings</Link>
             </li>
             <li>
-                <Link href="/logout" method="post">Log Out</Link>
+                <Link href="/logout" method="post" as="button">Log Out</Link>
             </li>
         </ui>
     </nav>
