@@ -3,7 +3,7 @@
   <Nav />
 
   <div>
-    <p>The current time is {{ time }}.</p>
+    <p style="margin-top: 400px">The current time is {{ time }}.</p>
   </div>
 </template>
 
