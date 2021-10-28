@@ -29,5 +29,5 @@ Route::get('/settings', function () {
 });
 
 Route::post('/logout', function () {
-    dd('logging the user out');
+    dd(request('foo'));
 });

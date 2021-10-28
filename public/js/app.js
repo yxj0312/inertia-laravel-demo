@@ -19404,6 +19404,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: "/logout",
     method: "post",
+    data: {
+      foo: 'bar'
+    },
     as: "button",
     "class": "text-blue-500 hover:underline"
   }, {
