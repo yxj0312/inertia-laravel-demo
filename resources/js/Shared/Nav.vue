@@ -5,14 +5,14 @@
                 <Link
                     href="/"
                     class="text-blue-500 hover:underline"
-                    :class="{ 'font-bold underline': true }"
+                    :class="{ 'font-bold underline': $page.url === '/' }"
                 >Home</Link>
             </li>
             <li>
-                <Link href="/users" class="text-blue-500 hover:underline">Users</Link>
+                <Link href="/users" class="text-blue-500 hover:underline" :class="{ 'font-bold underline': $page.url === '/users' }">Users</Link>
             </li>
             <li>
-                <Link href="/settings" class="text-blue-500 hover:underline">Settings</Link>
+                <Link href="/settings" class="text-blue-500 hover:underline" :class="{ 'font-bold underline': $page.url === '/settings' }">Settings</Link>
             </li>
             <li>
                 <Link
