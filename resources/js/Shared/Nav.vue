@@ -9,10 +9,18 @@
                 >Home</Link>
             </li>
             <li>
-                <Link href="/users" class="text-blue-500 hover:underline" :class="{ 'font-bold underline': $page.url === '/users' }">Users</Link>
+                <Link
+                    href="/users?foo=bar&baz=buzz"
+                    class="text-blue-500 hover:underline"
+                    :class="{ 'font-bold underline': $page.component === 'Users' }"
+                >Users</Link>
             </li>
             <li>
-                <Link href="/settings" class="text-blue-500 hover:underline" :class="{ 'font-bold underline': $page.url === '/settings' }">Settings</Link>
+                <Link
+                    href="/settings"
+                    class="text-blue-500 hover:underline"
+                    :class="{ 'font-bold underline': $page.url === '/settings' }"
+                >Settings</Link>
             </li>
             <li>
                 <Link
