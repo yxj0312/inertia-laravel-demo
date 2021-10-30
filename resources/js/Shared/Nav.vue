@@ -5,7 +5,7 @@
                 <Link
                     href="/"
                     class="text-blue-500 hover:underline"
-                    :class="{ 'font-bold underline': $page.url === '/' }"
+                    :class="{ 'font-bold underline': $page.component === 'Home' }"
                 >Home</Link>
             </li>
             <li>
@@ -19,7 +19,7 @@
                 <Link
                     href="/settings"
                     class="text-blue-500 hover:underline"
-                    :class="{ 'font-bold underline': $page.url === '/settings' }"
+                    :class="{ 'font-bold underline': $page.component === 'Settings' }"
                 >Settings</Link>
             </li>
             <li>
