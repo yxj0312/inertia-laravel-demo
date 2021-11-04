@@ -1,13 +1,10 @@
 <template>
-
-  <Layout>
-    <h1 class="text-3xl">Home</h1>
-  </Layout>
+  <h1 class="text-3xl">Home</h1>
 </template>
 
 <script>
-import Layout from "../Shared/Layout.vue"
+import Layout from "../Shared/Layout";
 export default {
-  components: { Layout }
+  layout: Layout
 };
 </script>
