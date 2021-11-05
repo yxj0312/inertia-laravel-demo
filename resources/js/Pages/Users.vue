@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import Layout from "../Shared/Layout";
+// import Layout from "../Shared/Layout";
 export default {
-  layout: Layout,
+  // layout: Layout,
   props: { time: String }
 };
 </script>
