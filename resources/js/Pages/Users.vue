@@ -1,4 +1,5 @@
 <template>
+  <Head title="Users" />
   <h1 class="text-3xl">Users</h1>
 
   <div style="margin-top: 1000px">
@@ -8,10 +9,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
+defineProps({ time: String });
 // import Layout from "../Shared/Layout";
-export default {
-  // layout: Layout,
-  props: { time: String }
-};
+// export default {
+//   // layout: Layout,
+//   props: { time: String }
+// };
 </script>
