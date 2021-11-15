@@ -41,19 +41,11 @@
   </div>
 
   <!-- Paginator -->
-  <div class="mt-6">
-    <Component
-      :is="link.url ? 'Link' : 'Span'"
-      v-for="link in users.links"
-      :href="link.url"
-      v-html="link.label"
-      class="px-1"
-      :class="link.url ? '' : 'text-gray-500'"
-    />
-  </div>
+  <Pagination :links="users.links" class="mt-6"/>
 </template>
 
 <script setup>
+import Pagination from '../Shared/Pagination.vue';
 defineProps({ time: String, users: Object });
 // import Layout from "../Shared/Layout";
 // export default {
