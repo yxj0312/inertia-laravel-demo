@@ -9,7 +9,7 @@
         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
           <table class="min-w-full divide-y divide-gray-200">
             <tbody class="bg-white divide-y divide-gray-200">
-              <tr v-for="user in users" :key="user.id">
+              <tr v-for="user in users.data" :key="user.id">
                 <td class="px-6 py-4 whitespace-nowrap">
                   <div class="flex items-center">
                     <div>
@@ -39,7 +39,7 @@
 </template>
 
 <script setup>
-defineProps({ time: String, users: Array });
+defineProps({ time: String, users: Object });
 // import Layout from "../Shared/Layout";
 // export default {
 //   // layout: Layout,
