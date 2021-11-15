@@ -36,6 +36,11 @@
 
     <Link href="/users" class="text-blue-500" preserve-scroll>Refresh</Link>
   </div>
+
+  <!-- Paginator -->
+  <div class="mt-6">
+    <Link v-for="link in users.links" :href= "link.url" v-html="link.label"/>
+  </div>
 </template>
 
 <script setup>
