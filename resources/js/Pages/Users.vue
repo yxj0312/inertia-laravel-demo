@@ -19,7 +19,10 @@
                 </td>
 
                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <a :href="`/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                  <a
+                    :href="`/users/${user.id}/edit`"
+                    class="text-indigo-600 hover:text-indigo-900"
+                  >Edit</a>
                 </td>
               </tr>
 
@@ -39,7 +42,14 @@
 
   <!-- Paginator -->
   <div class="mt-6">
-    <Link v-for="link in users.links" :href= "link.url" v-html="link.label"/>
+    <Component
+      :is="link.url ? 'Link' : 'Span'"
+      v-for="link in users.links"
+      :href="link.url"
+      v-html="link.label"
+      class="px-1"
+      :class="link.url ? '' : 'text-gray-500'"
+    />
   </div>
 </template>
 
