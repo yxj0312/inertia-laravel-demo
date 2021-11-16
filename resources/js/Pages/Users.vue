@@ -1,6 +1,9 @@
 <template>
   <Head title="Users" />
-  <h1 class="text-3xl">Users</h1>
+  <div class="flex justify-between mb-6">
+    <h1 class="text-3xl">Users</h1>
+    <input type="text" placeholder="Search...">
+  </div>
 
   <!-- This example requires Tailwind CSS v2.0+ -->
   <div class="flex flex-col">
