@@ -2,7 +2,7 @@
   <Head title="Users" />
   <div class="flex justify-between mb-6">
     <h1 class="text-3xl">Users</h1>
-    <input type="text" placeholder="Search..." class="border px-2 rounded-lg">
+    <input v-model="search" type="text" placeholder="Search..." class="border px-2 rounded-lg">
   </div>
 
   <!-- This example requires Tailwind CSS v2.0+ -->
@@ -48,8 +48,16 @@
 </template>
 
 <script setup>
+import { ref } from '@vue/reactivity';
+import { watch } from '@vue/runtime-core';
 import Pagination from '../Shared/Pagination.vue';
 defineProps({ time: String, users: Object });
+
+let search = ref('');
+
+watch(search,value => {
+  console.log('changed ' + value);
+})
 // import Layout from "../Shared/Layout";
 // export default {
 //   // layout: Layout,
