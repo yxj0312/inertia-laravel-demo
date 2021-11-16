@@ -11,9 +11,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _vue_reactivity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @vue/reactivity */ "./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js");
-/* harmony import */ var _vue_runtime_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @vue/runtime-core */ "./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js");
+/* harmony import */ var _vue_reactivity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @vue/reactivity */ "./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js");
+/* harmony import */ var _vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @vue/runtime-core */ "./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js");
 /* harmony import */ var _Shared_Pagination_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Shared/Pagination.vue */ "./resources/js/Shared/Pagination.vue");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+
 
 
 
@@ -25,9 +27,12 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var search = (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_1__.ref)('');
-    (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_2__.watch)(search, function (value) {
+    var search = (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_2__.ref)('');
+    (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__.watch)(search, function (value) {
       console.log('changed ' + value);
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.get('/users', {
+        search: value
+      });
     }); // import Layout from "../Shared/Layout";
     // export default {
     //   // layout: Layout,
@@ -36,9 +41,10 @@ __webpack_require__.r(__webpack_exports__);
 
     var __returned__ = {
       search: search,
-      ref: _vue_reactivity__WEBPACK_IMPORTED_MODULE_1__.ref,
-      watch: _vue_runtime_core__WEBPACK_IMPORTED_MODULE_2__.watch,
-      Pagination: _Shared_Pagination_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+      ref: _vue_reactivity__WEBPACK_IMPORTED_MODULE_2__.ref,
+      watch: _vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__.watch,
+      Pagination: _Shared_Pagination_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+      Inertia: _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,

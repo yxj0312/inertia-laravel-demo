@@ -51,12 +51,14 @@
 import { ref } from '@vue/reactivity';
 import { watch } from '@vue/runtime-core';
 import Pagination from '../Shared/Pagination.vue';
+import {Inertia} from '@inertiajs/inertia'
 defineProps({ time: String, users: Object });
 
 let search = ref('');
 
 watch(search,value => {
   console.log('changed ' + value);
+  Inertia.get('/users', { search: value})
 })
 // import Layout from "../Shared/Layout";
 // export default {
