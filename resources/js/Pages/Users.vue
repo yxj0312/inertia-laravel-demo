@@ -2,7 +2,7 @@
   <Head title="Users" />
   <div class="flex justify-between mb-6">
     <h1 class="text-3xl">Users</h1>
-    <input type="text" placeholder="Search...">
+    <input type="text" placeholder="Search..." class="border px-2 rounded-lg">
   </div>
 
   <!-- This example requires Tailwind CSS v2.0+ -->

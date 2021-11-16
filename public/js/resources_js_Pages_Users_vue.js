@@ -76,7 +76,8 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "text-3xl"
 }, "Users"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "text",
-  placeholder: "Search..."
+  placeholder: "Search...",
+  "class": "border px-2 rounded-lg"
 })], -1
 /* HOISTED */
 );
