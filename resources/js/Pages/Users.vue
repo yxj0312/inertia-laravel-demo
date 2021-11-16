@@ -58,7 +58,9 @@ let search = ref('');
 
 watch(search,value => {
   console.log('changed ' + value);
-  Inertia.get('/users', { search: value})
+  Inertia.get('/users', { search: value}, {
+    preserveState: true
+  })
 })
 // import Layout from "../Shared/Layout";
 // export default {
