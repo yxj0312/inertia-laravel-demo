@@ -31,7 +31,6 @@ __webpack_require__.r(__webpack_exports__);
     var props = __props;
     var search = (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_2__.ref)(props.filters.search);
     (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__.watch)(search, function (value) {
-      console.log('changed ' + value);
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.get('/users', {
         search: value
       }, {
