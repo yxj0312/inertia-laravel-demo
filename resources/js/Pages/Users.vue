@@ -52,9 +52,10 @@ import { ref } from '@vue/reactivity';
 import { watch } from '@vue/runtime-core';
 import Pagination from '../Shared/Pagination.vue';
 import {Inertia} from '@inertiajs/inertia'
-defineProps({ time: String, users: Object });
 
-let search = ref('');
+let props = defineProps({ time: String, users: Object, filters: Object });
+
+let search = ref(props.filters.search);
 
 watch(search,value => {
   console.log('changed ' + value);

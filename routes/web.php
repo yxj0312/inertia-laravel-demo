@@ -35,6 +35,8 @@ Route::get('/users', function () {
             'id' => $user->id,
             'name' => $user->name
         ]),
+
+        'filters' => Request::only(['search'])
     ]);
 });
 
