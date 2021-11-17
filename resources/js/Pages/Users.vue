@@ -52,17 +52,23 @@ import { ref } from '@vue/reactivity';
 import { watch } from '@vue/runtime-core';
 import Pagination from '../Shared/Pagination.vue';
 import {Inertia} from '@inertiajs/inertia'
+import debounce from 'lodash/debounce';
 
 let props = defineProps({ time: String, users: Object, filters: Object });
 
 let search = ref(props.filters.search);
 
-watch(search,value => {
-  Inertia.get('/users', { search: value}, {
-    preserveState: true,
-    replace:true
-  })
-})
+watch(search,debounce(function (value) {
+    Inertia.get(
+      '/users',
+      { search: value },
+      {
+        preserveState: true,
+        replace: true,
+      }
+    );
+  }, 300)
+)
 // import Layout from "../Shared/Layout";
 // export default {
 //   // layout: Layout,
