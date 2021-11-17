@@ -60,7 +60,8 @@ let search = ref(props.filters.search);
 watch(search,value => {
   console.log('changed ' + value);
   Inertia.get('/users', { search: value}, {
-    preserveState: true
+    preserveState: true,
+    replace:true
   })
 })
 // import Layout from "../Shared/Layout";

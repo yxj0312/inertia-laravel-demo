@@ -35,7 +35,8 @@ __webpack_require__.r(__webpack_exports__);
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.get('/users', {
         search: value
       }, {
-        preserveState: true
+        preserveState: true,
+        replace: true
       });
     }); // import Layout from "../Shared/Layout";
     // export default {
