@@ -1,5 +1,12 @@
-<script>
-export default {}
+<script setup>
+import { reactive } from '@vue/reactivity';
+
+
+let form = reactive({
+    name: '',
+    email: '',
+    password: ''
+})
 </script>
 
 <template>
@@ -12,6 +19,7 @@ export default {}
             <label for="name" class="block mb-2 uppercase font-bold text-xs text-gray-700">Name</label>
 
             <input
+                v-model="form.name"
                 type="text"
                 class="border border-gray-400 p-2 w-full"
                 name="name"
@@ -24,6 +32,7 @@ export default {}
             <label for="email" class="block mb-2 uppercase font-bold text-xs text-gray-700">Email</label>
 
             <input
+                v-model="form.email"
                 type="email"
                 class="border border-gray-400 p-2 w-full"
                 name="email"
@@ -39,6 +48,7 @@ export default {}
             >Password</label>
 
             <input
+                v-model="form.password"
                 type="password"
                 class="border border-gray-400 p-2 w-full"
                 name="password"
