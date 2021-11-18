@@ -1,5 +1,7 @@
 <script setup>
+import { Inertia } from '@inertiajs/inertia';
 import { reactive } from '@vue/reactivity';
+
 
 
 let form = reactive({
@@ -7,6 +9,10 @@ let form = reactive({
     email: '',
     password: ''
 })
+
+let submit = () => {
+    Inertia.post('/users', form);
+}
 </script>
 
 <template>
@@ -14,7 +20,7 @@ let form = reactive({
 
     <h1 class="text-3xl">Create New User</h1>
 
-    <form action="/" method="post" class="max-w-md mx-auto mt-8">
+    <form @submit.prevent="submit" class="max-w-md mx-auto mt-8">
         <div class="mb-6">
             <label for="name" class="block mb-2 uppercase font-bold text-xs text-gray-700">Name</label>
 
