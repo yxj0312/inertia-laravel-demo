@@ -30,7 +30,6 @@ let submit = () => {
                 class="border border-gray-400 p-2 w-full"
                 name="name"
                 id="name"
-                required
             />
         </div>
 
@@ -43,7 +42,6 @@ let submit = () => {
                 class="border border-gray-400 p-2 w-full"
                 name="email"
                 id="email"
-                required
             />
         </div>
 
@@ -59,7 +57,6 @@ let submit = () => {
                 class="border border-gray-400 p-2 w-full"
                 name="password"
                 id="password"
-                required
             />
         </div>
 
