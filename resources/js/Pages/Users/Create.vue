@@ -32,7 +32,11 @@ let submit = () => {
                 id="name"
             />
 
-            <div v-if ="$page.props.errors.name" v-text="$page.props.errors.name" class="text-red-500 text-sm mt-1"></div>
+            <div
+                v-if="$page.props.errors.name"
+                v-text="$page.props.errors.name"
+                class="text-red-500 text-sm mt-1"
+            ></div>
         </div>
 
         <div class="mb-6">
@@ -45,6 +49,12 @@ let submit = () => {
                 name="email"
                 id="email"
             />
+
+            <div
+                v-if="$page.props.errors.email"
+                v-text="$page.props.errors.email"
+                class="text-red-500 text-sm mt-1"
+            ></div>
         </div>
 
         <div class="mb-6">
@@ -60,6 +70,12 @@ let submit = () => {
                 name="password"
                 id="password"
             />
+
+            <div
+                v-if="$page.props.errors.password"
+                v-text="$page.props.errors.password"
+                class="text-red-500 text-sm mt-1"
+            ></div>
         </div>
 
         <div class="mb-6">
