@@ -31,6 +31,8 @@ let submit = () => {
                 name="name"
                 id="name"
             />
+
+            <div v-if ="$page.props.errors.name" v-text="$page.props.errors.name" class="text-red-500 text-sm mt-1"></div>
         </div>
 
         <div class="mb-6">
