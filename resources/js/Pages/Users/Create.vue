@@ -1,6 +1,6 @@
 <script setup>
 import { Inertia } from '@inertiajs/inertia';
-import { reactive } from '@vue/reactivity';
+import { reactive, ref } from '@vue/reactivity';
 
 defineProps({
     errors: Object
@@ -12,8 +12,15 @@ let form = reactive({
     password: ''
 })
 
+let processing = ref(false)
+
 let submit = () => {
-    Inertia.post('/users', form);
+    processing.value = true
+
+    Inertia.post('/users', form, {
+        onStart: () => { processing.value = true },
+        onFinish: () => { processing.value = true },
+    });
 }
 </script>
 
@@ -84,6 +91,7 @@ let submit = () => {
             <button
                 type="submit"
                 class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
+                :disabled="processing"
             >Submit</button>
         </div>
     </form>
