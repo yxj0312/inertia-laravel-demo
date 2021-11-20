@@ -2,7 +2,9 @@
 import { Inertia } from '@inertiajs/inertia';
 import { reactive } from '@vue/reactivity';
 
-
+defineProps({
+    errors: Object
+})
 
 let form = reactive({
     name: '',
@@ -33,8 +35,8 @@ let submit = () => {
             />
 
             <div
-                v-if="$page.props.errors.name"
-                v-text="$page.props.errors.name"
+                v-if="errors.name"
+                v-text="errors.name"
                 class="text-red-500 text-sm mt-1"
             ></div>
         </div>
@@ -51,8 +53,8 @@ let submit = () => {
             />
 
             <div
-                v-if="$page.props.errors.email"
-                v-text="$page.props.errors.email"
+                v-if="errors.email"
+                v-text="errors.email"
                 class="text-red-500 text-sm mt-1"
             ></div>
         </div>
@@ -72,8 +74,8 @@ let submit = () => {
             />
 
             <div
-                v-if="$page.props.errors.password"
-                v-text="$page.props.errors.password"
+                v-if="errors.password"
+                v-text="errors.password"
                 class="text-red-500 text-sm mt-1"
             ></div>
         </div>
