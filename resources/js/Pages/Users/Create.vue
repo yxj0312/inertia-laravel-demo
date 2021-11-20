@@ -1,12 +1,19 @@
 <script setup>
 import { Inertia } from '@inertiajs/inertia';
+import { useForm } from '@inertiajs/inertia-vue3';
 import { reactive, ref } from '@vue/reactivity';
 
 defineProps({
     errors: Object
 })
 
-let form = reactive({
+// let form = reactive({
+//     name: '',
+//     email: '',
+//     password: ''
+// })
+
+let form = useForm({
     name: '',
     email: '',
     password: ''
