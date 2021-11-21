@@ -32,6 +32,9 @@ __webpack_require__.r(__webpack_exports__);
       email: '',
       password: ''
     }); // let processing = ref(false)
+    // setTimeout(() => {
+    //     form.reset()
+    // }, 3000);
 
     var submit = function submit() {
       form.post('/users'); // processing.value = true

@@ -21,6 +21,10 @@ let form = useForm({
 
 // let processing = ref(false)
 
+// setTimeout(() => {
+//     form.reset()
+// }, 3000);
+
 let submit = () => {
     form.post('/users')
     // processing.value = true
