@@ -56,11 +56,13 @@ import { watch } from '@vue/runtime-core';
 import Pagination from '../../Shared/Pagination.vue';
 import {Inertia} from '@inertiajs/inertia'
 import debounce from 'lodash/debounce';
+import throttle from "lodash/throttle";
 
 let props = defineProps({ time: String, users: Object, filters: Object });
 
 let search = ref(props.filters.search);
 
+// debounce get triggered after stop typing (here 300ms)
 watch(search,debounce(function (value) {
     Inertia.get(
       '/users',
@@ -72,6 +74,20 @@ watch(search,debounce(function (value) {
     );
   }, 300)
 )
+
+// Each 500ms trigger it
+// watch(search,throttle(function (value) {
+//     Inertia.get(
+//       '/users',
+//       { search: value },
+//       {
+//         preserveState: true,
+//         replace: true,
+//       }
+//     );
+//   }, 500)
+// )
+
 // import Layout from "../Shared/Layout";
 // export default {
 //   // layout: Layout,
