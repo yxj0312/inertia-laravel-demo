@@ -1,11 +1,11 @@
 <script setup>
-import { Inertia } from '@inertiajs/inertia';
+// import { Inertia } from '@inertiajs/inertia';
 import { useForm } from '@inertiajs/inertia-vue3';
-import { reactive, ref } from '@vue/reactivity';
+// import { reactive, ref } from '@vue/reactivity';
 
-defineProps({
-    errors: Object
-})
+// defineProps({
+//     errors: Object
+// })
 
 // let form = reactive({
 //     name: '',
@@ -19,15 +19,16 @@ let form = useForm({
     password: ''
 })
 
-let processing = ref(false)
+// let processing = ref(false)
 
 let submit = () => {
-    processing.value = true
+    form.post('/users')
+    // processing.value = true
 
-    Inertia.post('/users', form, {
-        onStart: () => { processing.value = true },
-        onFinish: () => { processing.value = true },
-    });
+    // Inertia.post('/users', form, {
+    //     onStart: () => { processing.value = true },
+    //     onFinish: () => { processing.value = true },
+    // });
 }
 </script>
 
@@ -49,8 +50,8 @@ let submit = () => {
             />
 
             <div
-                v-if="errors.name"
-                v-text="errors.name"
+                v-if="form.errors.name"
+                v-text="form.errors.name"
                 class="text-red-500 text-sm mt-1"
             ></div>
         </div>
@@ -67,8 +68,8 @@ let submit = () => {
             />
 
             <div
-                v-if="errors.email"
-                v-text="errors.email"
+                v-if="form.errors.email"
+                v-text="form.errors.email"
                 class="text-red-500 text-sm mt-1"
             ></div>
         </div>
@@ -88,17 +89,22 @@ let submit = () => {
             />
 
             <div
-                v-if="errors.password"
-                v-text="errors.password"
+                v-if="form.errors.password"
+                v-text="form.errors.password"
                 class="text-red-500 text-sm mt-1"
             ></div>
         </div>
 
         <div class="mb-6">
-            <button
+            <!-- <button
                 type="submit"
                 class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
                 :disabled="processing"
+            >Submit</button> -->
+            <button
+                type="submit"
+                class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
+                :disabled="form.processing"
             >Submit</button>
         </div>
     </form>
