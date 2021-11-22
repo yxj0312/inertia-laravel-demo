@@ -8,7 +8,9 @@ createInertiaApp({
     // let page = require(`./Pages/${name}`).default;
     let page = (await import(`./Pages/${name}`)).default;
 
-    page.layout ??= Layout;
+     if (page.layout === undefined) {
+      page.layout = Layout;
+    }
 
     return page;
   },
