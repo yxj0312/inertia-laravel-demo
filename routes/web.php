@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('login',[LoginController::class, 'create'])->name('login');
+Route::post('login',[LoginController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/', function () {
@@ -33,9 +34,7 @@ Route::middleware('auth')->group(function () {
         ]);
     });
 
-    Route::get('/users/create', function () {
-        return Inertia::render('Users/Create');
-    });
+   
 
     Route::post('/users', function () {
         $attributes = Request::validate([
@@ -57,3 +56,8 @@ Route::middleware('auth')->group(function () {
         dd(request('foo'));
     });
 });
+
+
+ Route::get('/users/create', function () {
+        return Inertia::render('Users/Create');
+    });
