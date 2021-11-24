@@ -2,12 +2,11 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Models\User;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('login',[LoginController::class, 'create'])->name('login');
-Route::post('login',[LoginController::class, 'store']);
+Route::get('login', [LoginController::class, 'create'])->name('login');
+Route::post('login', [LoginController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/', function () {
@@ -15,17 +14,14 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::get('/users', function () {
-
-        // return User::paginate(10);
         return Inertia::render('Users/Index', [
-            'time' => now()->toTimeString(),
             'users' => User::query()
                 ->when(Request::input('search'), function ($query, $search) {
                     $query->where('name', 'like', "%{$search}%");
                 })
                 ->paginate(10)
                 ->withQueryString()
-                ->through(fn ($user) => [
+                ->through(fn($user) => [
                     'id' => $user->id,
                     'name' => $user->name
                 ]),
@@ -34,7 +30,9 @@ Route::middleware('auth')->group(function () {
         ]);
     });
 
-   
+    Route::get('/users/create', function () {
+        return Inertia::render('Users/Create');
+    });
 
     Route::post('/users', function () {
         $attributes = Request::validate([
@@ -51,13 +49,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/settings', function () {
         return Inertia::render('Settings');
     });
-
-    Route::post('/logout', function () {
-        dd(request('foo'));
-    });
 });
-
-
- Route::get('/users/create', function () {
-        return Inertia::render('Users/Create');
-    });
