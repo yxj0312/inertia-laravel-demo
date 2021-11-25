@@ -27,7 +27,10 @@ Route::middleware('auth')->group(function () {
                     'name' => $user->name
                 ]),
 
-            'filters' => Request::only(['search'])
+            'filters' => Request::only(['search']),
+            'can' => [
+                'createUser' => false
+            ]
         ]);
     });
 
