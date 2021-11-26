@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 
             'filters' => Request::only(['search']),
             'can' => [
-                'createUser' => Auth::user()->email === "xiajun2@123.com"
+                'createUser' => Auth::user()->can('create', User::class)
             ]
         ]);
     });

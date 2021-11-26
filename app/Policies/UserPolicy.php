@@ -40,7 +40,7 @@ class UserPolicy
      */
     public function create(User $user)
     {
-       return  $user->email === "xiajun2@123.com"
+       return  $user->email === "xiajun2@123.com";
     }
 
     /**
