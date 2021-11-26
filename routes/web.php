@@ -42,6 +42,12 @@ Route::middleware('auth')->group(function () {
         return Inertia::render('Users/Create');
     })->middleware('can:create,App\Models\User');
 
+
+    // For latest Laravel Version, which is still not supported by this app.
+    // Route::get('/users/create', function () {
+    //     return Inertia::render('Users/Create');
+    // })->can('create','App\Models\User');
+
     Route::post('/users', function () {
         $attributes = Request::validate([
             'name' => 'required',
