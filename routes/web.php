@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
                     'id' => $user->id,
                     'name' => $user->name,
                     'can' => [
-                        'edit' => Auth::user()->can('edit', User::class)
+                        'edit' => Auth::user()->can('edit', $user)
                     ]
                 ]),
 
