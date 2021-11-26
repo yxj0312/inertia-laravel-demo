@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -29,7 +30,7 @@ Route::middleware('auth')->group(function () {
 
             'filters' => Request::only(['search']),
             'can' => [
-                'createUser' => false
+                'createUser' => Auth::user()->email === "xiajun2@123.com"
             ]
         ]);
     });
