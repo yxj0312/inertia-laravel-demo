@@ -50,6 +50,18 @@ class UserPolicy
      * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
+    public function edit(User $user, User $model)
+    {
+        return (bool) mt_rand(0,1);
+    }
+
+    /**
+     * Determine whether the user can update the model.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\User  $model
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
     public function update(User $user, User $model)
     {
         //
