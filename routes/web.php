@@ -43,6 +43,16 @@ Route::middleware('auth')->group(function () {
     })->middleware('can:create,App\Models\User');
 
 
+    // 1. add endpoint
+    // 2. add policy
+    // 3. add inertia view for edit
+    // 4. add form to edit page
+    // 5. add post endpoint...
+    Route::get('/users/edit', function () {
+        return Inertia::render('Users/Edit');
+    })->middleware('can:,App\Models\User');
+
+
     // For latest Laravel Version, which is still not supported by this app.
     // Route::get('/users/create', function () {
     //     return Inertia::render('Users/Create');
