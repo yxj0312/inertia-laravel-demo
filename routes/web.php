@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\UsersController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -15,28 +16,34 @@ Route::middleware('auth')->group(function () {
         return Inertia::render('Home');
     });
 
-    Route::get('/users', function () {
-        return Inertia::render('Users/Index', [
-            'users' => User::query()
-                ->when(Request::input('search'), function ($query, $search) {
-                    $query->where('name', 'like', "%{$search}%");
-                })
-                ->paginate(10)
-                ->withQueryString()
-                ->through(fn($user) => [
-                    'id' => $user->id,
-                    'name' => $user->name,
-                    'can' => [
-                        'edit' => Auth::user()->can('edit', $user)
-                    ]
-                ]),
-
-            'filters' => Request::only(['search']),
-            'can' => [
-                'createUser' => Auth::user()->can('create', User::class)
-            ]
-        ]);
+    Route::get('/settings', function () {
+        return Inertia::render('Settings');
     });
+
+    Route::get('/users', [UsersController::class, 'index']);
+
+    // Route::get('/users', function () {
+    //     return Inertia::render('Users/Index', [
+    //         'users' => User::query()
+    //             ->when(Request::input('search'), function ($query, $search) {
+    //                 $query->where('name', 'like', "%{$search}%");
+    //             })
+    //             ->paginate(10)
+    //             ->withQueryString()
+    //             ->through(fn($user) => [
+    //                 'id' => $user->id,
+    //                 'name' => $user->name,
+    //                 'can' => [
+    //                     'edit' => Auth::user()->can('edit', $user)
+    //                 ]
+    //             ]),
+
+    //         'filters' => Request::only(['search']),
+    //         'can' => [
+    //             'createUser' => Auth::user()->can('create', User::class)
+    //         ]
+    //     ]);
+    // });
 
     Route::get('/users/create', function () {
         return Inertia::render('Users/Create');
@@ -70,7 +77,5 @@ Route::middleware('auth')->group(function () {
         return redirect('/users');
     });
 
-    Route::get('/settings', function () {
-        return Inertia::render('Settings');
-    });
+    
 });
