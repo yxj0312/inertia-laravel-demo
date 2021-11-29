@@ -56,7 +56,15 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = Request::validate([
+            'name' => 'required',
+            'email' => ['required', 'email'],
+            'password' => 'required',
+        ]);
+
+        User::create($attributes);
+
+        return redirect('/users');
     }
 
     /**

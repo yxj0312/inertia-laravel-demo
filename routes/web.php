@@ -66,18 +66,20 @@ Route::middleware('auth')->group(function () {
     // Route::get('/users/create', function () {
     //     return Inertia::render('Users/Create');
     // })->can('create','App\Models\User');
+    
+    Route::post('/users', [UsersController::class, 'store']);
 
-    Route::post('/users', function () {
-        $attributes = Request::validate([
-            'name' => 'required',
-            'email' => ['required', 'email'],
-            'password' => 'required',
-        ]);
+    // Route::post('/users', function () {
+    //     $attributes = Request::validate([
+    //         'name' => 'required',
+    //         'email' => ['required', 'email'],
+    //         'password' => 'required',
+    //     ]);
 
-        User::create($attributes);
+    //     User::create($attributes);
 
-        return redirect('/users');
-    });
+    //     return redirect('/users');
+    // });
 
     
 });
