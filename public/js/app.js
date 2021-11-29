@@ -543,6 +543,16 @@ var map = {
 		"./resources/js/Pages/Home.vue",
 		"resources_js_Pages_Home_vue"
 	],
+	"./Larabits/Shapes": [
+		"./resources/js/Pages/Larabits/Shapes.vue",
+		"/js/vendor",
+		"resources_js_Pages_Larabits_Shapes_vue"
+	],
+	"./Larabits/Shapes.vue": [
+		"./resources/js/Pages/Larabits/Shapes.vue",
+		"/js/vendor",
+		"resources_js_Pages_Larabits_Shapes_vue"
+	],
 	"./Settings": [
 		"./resources/js/Pages/Settings.vue",
 		"resources_js_Pages_Settings_vue"
