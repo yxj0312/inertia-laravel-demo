@@ -11,6 +11,7 @@
     <div class="shape-div--background"></div>
 
     <div class="shape-div--polygon"></div>
+    <div class="shape-div--polygon-2"></div>
 </template>
 
 <style>
@@ -43,6 +44,13 @@ body {
     height: 200px;
     background: url("http://picsum.photos/200");
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.shape-div--polygon-2 {
+    width: 200px;
+    height: 200px;
+    background: url("http://picsum.photos/200");
+    clip-path: polygon(50% 0%, 0% 100%, 50% 100%, 100% 50%);
 }
 </style>
 
