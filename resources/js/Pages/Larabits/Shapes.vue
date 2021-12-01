@@ -52,6 +52,7 @@ body {
     background: url("http://picsum.photos/200");
     clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
     animation: fancyfancy 2s;
+    animation-iteration-count: infinite;
 }
 
 @keyframes fancyfancy {
