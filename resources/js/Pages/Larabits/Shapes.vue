@@ -12,6 +12,7 @@
 
     <div class="shape-div--polygon"></div>
     <div class="shape-div--polygon-2"></div>
+    <div class="shape-div--polygon-3"></div>
 </template>
 
 <style>
@@ -56,6 +57,16 @@ body {
     animation-direction: alternate;
 }
 
+.shape-div--polygon-3 {
+    width: 200px;
+    height: 200px;
+    background: url("http://picsum.photos/200");
+    clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+    animation: fancyfancy2 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 @keyframes fancyfancy {
     from {
         clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
@@ -63,6 +74,17 @@ body {
 
     to {
         clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 0%);
+    }
+}
+
+
+@keyframes fancyfancy2 {
+    from {
+        clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+    }
+
+    to {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
 }
 </style>
