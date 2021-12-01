@@ -50,7 +50,7 @@ body {
     width: 200px;
     height: 200px;
     background: url("http://picsum.photos/200");
-    clip-path: polygon(50% 0%, 0% 100%, 50% 100%, 100% 50%);
+    clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
 }
 </style>
 
