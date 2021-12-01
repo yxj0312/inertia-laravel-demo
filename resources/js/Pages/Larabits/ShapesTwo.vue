@@ -46,5 +46,6 @@ body {
 img {
     float: right;
     clip-path: circle();
+    shape-outside: circle();
 }
 </style>

@@ -73,7 +73,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nhtml,\r\nbody {\r\n    height: 100%;\n}\nbody {\r\n    display: grid;\r\n    place-items: center;\n}\n.page {\r\n    width: 400px;\r\n    padding: 1rem 2rem;\r\n    margin: auto;\r\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\r\n    border-radius: 12px;\r\n    font-family: sans-serif;\r\n    line-height: 1.5rem;\n}\nimg {\r\n    float: right;\r\n    -webkit-clip-path: circle();\r\n            clip-path: circle();\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nhtml,\r\nbody {\r\n    height: 100%;\n}\nbody {\r\n    display: grid;\r\n    place-items: center;\n}\n.page {\r\n    width: 400px;\r\n    padding: 1rem 2rem;\r\n    margin: auto;\r\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\r\n    border-radius: 12px;\r\n    font-family: sans-serif;\r\n    line-height: 1.5rem;\n}\nimg {\r\n    float: right;\r\n    -webkit-clip-path: circle();\r\n            clip-path: circle();\r\n    shape-outside: circle();\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
