@@ -15,6 +15,14 @@ Route::get('/larabits/shapes', function() {
     return Inertia::render('Larabits/Shapes');
 });
 
+Route::get('/larabits/shapes', function() {
+    return Inertia::render('Larabits/Shapes');
+});
+
+Route::get('/larabits/shapes2', function() {
+    return Inertia::render('Larabits/ShapesTwo');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/', function () {
         return Inertia::render('Home');
