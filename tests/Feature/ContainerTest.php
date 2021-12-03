@@ -8,11 +8,23 @@ use Tests\TestCase;
 
 class ContainerTest extends TestCase
 {
+//    /** @test */
+//    function its_a_toy_chest()
+//    {
+//        $container = [
+//            'foo' => 'bar'
+//        ];
+
+//        var_dump($container['foo']);
+//    }
+
    /** @test */
    function its_a_toy_chest()
    {
        $container = [
-           'foo' => 'bar'
+           'foo' => function() {
+               return 'bar';
+           }
        ];
 
        var_dump($container['foo']);
