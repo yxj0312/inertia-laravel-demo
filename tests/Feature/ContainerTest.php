@@ -18,15 +18,21 @@ class ContainerTest extends TestCase
 //        var_dump($container['foo']);
 //    }
 
-   /** @test */
+//    /** @test */
+//    function its_a_toy_chest()
+//    {
+//        $container = [
+//            'foo' => function() {
+//                return 'bar';
+//            }
+//        ];
+
+//        var_dump($container['foo']());
+//    }
+
+    /** @test */
    function its_a_toy_chest()
    {
-       $container = [
-           'foo' => function() {
-               return 'bar';
-           }
-       ];
 
-       var_dump($container['foo']);
    }
 }
