@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Container;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -33,6 +34,10 @@ class ContainerTest extends TestCase
     /** @test */
    function its_a_toy_chest()
    {
+       $container = new Container();
 
+       $container->bind('foo', 'bar');
+
+       $this->assertEquals('bar', $container->get('foo'));
    }
 }
