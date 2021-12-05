@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Container;
+use App\Newsletter;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -39,5 +40,17 @@ class ContainerTest extends TestCase
        $container->bind('foo', 'bar');
 
        $this->assertEquals('bar', $container->get('foo'));
+   }
+
+   /** @test */
+   function LEVEL_TWO_it_can_lazily_resolve_functions()
+   {
+        $container = new Container();
+
+        $container->bind('newsletter', function() {
+            return new Newsletter();
+        });
+
+        $this->assertInstanceOf(Newsletter::class, $container->get('newsletter'));
    }
 }
