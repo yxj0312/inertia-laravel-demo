@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Closure;
+
 class Newsletter
 {
     protected array $bindings = [];
@@ -13,6 +15,10 @@ class Newsletter
 
     public function get($key)
     {
-        return $this->bindings[$key];
+        $concrete = $this->bindings[$key];
+        if ($concrete instanceof Closure) {
+            return $concrete();
+        }
+        return $concrete;
     }
 }

@@ -45,7 +45,7 @@ class ContainerTest extends TestCase
    /** @test */
    function LEVEL_TWO_it_can_lazily_resolve_functions()
    {
-        $container = new Container();
+        $container = new Newsletter();
 
         $container->bind('newsletter', function() {
             return new Newsletter();
