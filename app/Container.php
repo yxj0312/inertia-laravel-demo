@@ -23,6 +23,6 @@ class Container
 
     public function get($key)
     {
-        return $this->bindings[$key];
+        return $this->bindings[$key]['concrete'];
     }
 }
