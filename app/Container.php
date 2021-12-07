@@ -6,9 +6,19 @@ class Container
 {
     protected array $bindings = [];
 
-    public function bind($key, $value)
+    
+
+    public function bind($key, $concrete, $shared = false)
     {
-        $this->bindings[$key] = $value;
+        $this->bindings[$key] = [
+            'concrete' => $concrete,
+            'shared' => $shared
+        ];
+    }
+
+    public function singleton($key, $concrete)
+    {
+        $this->bind($key, $concrete, true);
     }
 
     public function get($key)
