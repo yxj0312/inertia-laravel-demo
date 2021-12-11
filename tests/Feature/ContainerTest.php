@@ -52,9 +52,9 @@ class ContainerTest extends TestCase
         });
         
 
-        // $container->singleton('newsletter', function() {
-        //     return new Newsletter();
-        // });
+        $container->singleton('newsletter', function() {
+            return new Newsletter();
+        });
 
         $this->assertInstanceOf(Newsletter::class, $container->get('newsletter'));
    }
