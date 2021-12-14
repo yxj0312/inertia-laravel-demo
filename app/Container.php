@@ -3,6 +3,7 @@
 namespace App;
 
 use Closure;
+use Exception;
 
 class Container 
 {
@@ -24,21 +25,25 @@ class Container
 
     public function get($key)
     {
-        $concrete =  $this->bindings[$key]['concrete'];
+        if (!isset($this->bindings[$key])) {
+            throw new Exception('No binding was registered for ' . $key);
+        }
 
-        if ($this->bindings[$key]['shared'] && isset($this->singletons[$key])) {
+        $binding = $this->bindings[$key];
+
+
+        if ($binding['shared'] && isset($this->singletons[$key])) {
             return $this->singletons[$key];
         }
 
-        if ($concrete instanceof Closure) {
-            $concrete = $concrete();
-
-            if ($this->bindings[$key]['shared']) {
-                $this->singletons[$key] = $concrete;
+        if ($binding['concrete'] instanceof Closure) {
+        
+            if ($binding['shared']) {
+                $this->singletons[$key] = $binding['concrete'];
             }
-            return $concrete;
+            return $binding['concrete']();
         }
 
-        return $concrete;
+        return $binding['concrete'];
     }
 }

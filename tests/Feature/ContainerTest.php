@@ -48,7 +48,7 @@ class ContainerTest extends TestCase
         $container = new Container();
 
         // $container->bind('newsletter', function() {
-        //     return new Newsletter();
+        //     return new Newsletter(uniqid());
         // });
         
 
@@ -56,9 +56,9 @@ class ContainerTest extends TestCase
             return new Newsletter(uniqid());
         });
 
-        var_dump($container->get('newsletter'));
-        var_dump($container->get('newsletter'));
-        var_dump($container->get('newsletter'));
+        // var_dump($container->get('newsletter'));
+        // var_dump($container->get('newsletter'));
+        // var_dump($container->get('newsletter'));
 
         $this->assertInstanceOf(Newsletter::class, $container->get('newsletter'));
    }
