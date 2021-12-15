@@ -8,6 +8,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
+use function PHPUnit\Framework\assertInstanceOf;
+
 class ContainerTest extends TestCase
 {
 //    /** @test */
@@ -67,5 +69,7 @@ class ContainerTest extends TestCase
    function LEVEL_THREE_it_can_do_magic()
    {
        $container = new Container();
+
+       $this->assertInstanceOf(Newsletter::class, $container->get(NewsLetter::class));
    }
 }
