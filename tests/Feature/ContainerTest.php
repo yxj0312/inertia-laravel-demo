@@ -62,4 +62,10 @@ class ContainerTest extends TestCase
 
         $this->assertInstanceOf(Newsletter::class, $container->get('newsletter'));
    }
+
+   /** @test */
+   function LEVEL_THREE_it_can_do_magic()
+   {
+       $container = new Container();
+   }
 }
