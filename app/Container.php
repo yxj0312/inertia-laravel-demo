@@ -26,6 +26,12 @@ class Container
     public function get($key)
     {
         if (!isset($this->bindings[$key])) {
+            // can we do some magic??
+
+            if (class_exists($key)) {
+                return new $key();
+            } 
+
             throw new Exception('No binding was registered for ' . $key);
         }
 
