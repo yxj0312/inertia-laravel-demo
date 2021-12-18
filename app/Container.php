@@ -29,7 +29,23 @@ class Container
             // can we do some magic??
 
             if (class_exists($key)) {
-                return new $key();
+                $reflector = new ReflectionClass($key);
+
+                $constructor = $reflector->getConstructor();
+
+                if (!$constructor) {
+                    return new $key();
+                }
+
+                $dependencies = [];
+
+                foreach ($constructor->getParameters() as $parameter) {
+                    $dependency = $parameter->getType()->getName();
+
+                    $dependencies[] = new $dependency();
+                }
+
+                $reflector->newInstanceArgs($dependencies);
             } 
 
             throw new Exception('No binding was registered for ' . $key);
