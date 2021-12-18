@@ -29,7 +29,7 @@ class Container
             // can we do some magic??
 
             if (class_exists($key)) {
-                $reflector = new ReflectionClass($key);
+                $reflector = new \ReflectionClass($key);
 
                 $constructor = $reflector->getConstructor();
 
@@ -45,7 +45,7 @@ class Container
                     $dependencies[] = new $dependency();
                 }
 
-                $reflector->newInstanceArgs($dependencies);
+                return $reflector->newInstanceArgs($dependencies);
             } 
 
             throw new Exception('No binding was registered for ' . $key);
