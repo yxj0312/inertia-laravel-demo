@@ -29,23 +29,7 @@ class Container
             // can we do some magic??
 
             if (class_exists($key)) {
-                $reflector = new \ReflectionClass($key);
-
-                $constructor = $reflector->getConstructor();
-
-                if (!$constructor) {
-                    return new $key();
-                }
-
-                $dependencies = [];
-
-                foreach ($constructor->getParameters() as $parameter) {
-                    $dependency = $parameter->getType()->getName();
-
-                    $dependencies[] = new $dependency();
-                }
-
-                return $reflector->newInstanceArgs($dependencies);
+                return $this->make($key);
             } 
 
             throw new Exception('No binding was registered for ' . $key);
@@ -67,5 +51,26 @@ class Container
         }
 
         return $binding['concrete'];
+    }
+
+    protected function make(string $key): mixed
+    {
+        $reflector = new \ReflectionClass($key);
+
+        $constructor = $reflector->getConstructor();
+
+        if (!$constructor) {
+            return new $key();
+        }
+
+        $dependencies = [];
+
+        foreach ($constructor->getParameters() as $parameter) {
+            $dependency = $parameter->getType()->getName();
+
+            $dependencies[] = $this->make($dependency);
+        }
+
+        return $reflector->newInstanceArgs($dependencies);
     }
 }
