@@ -3,6 +3,8 @@
 namespace Tests\Feature;
 
 use App\Container;
+use App\Http;
+use App\Mailchimp;
 use App\Newsletter;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -55,7 +57,9 @@ class ContainerTest extends TestCase
         
 
         $container->singleton('newsletter', function() {
-            return new Newsletter(uniqid());
+            return new Newsletter(
+                new Mailchimp(new Http())
+            );
         });
 
         // var_dump($container->get('newsletter'));
