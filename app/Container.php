@@ -2,15 +2,26 @@
 
 namespace App;
 
-use Closure;
 use Exception;
+use Closure;
+use ReflectionClass;
 
-class Container 
+class Container
 {
+    /**
+     * The list of registered bindings.
+     */
     protected array $bindings = [];
+
+    /**
+     * The list of bound singletons.
+     */
     protected array $singletons = [];
 
-    public function bind($key, $concrete, $shared = false)
+    /**
+     * Bind into the container.
+     */
+    public function bind(string $key, string|callable $concrete, bool $shared = false): void
     {
         $this->bindings[$key] = [
             'concrete' => $concrete,
@@ -18,57 +29,75 @@ class Container
         ];
     }
 
-    public function singleton($key, $concrete)
+    /**
+     * Bind a singleton into the container.
+     */
+    public function singleton(string $key, string|callable $concrete): void
     {
         $this->bind($key, $concrete, true);
     }
 
-    public function get($key)
+    /**
+     * Resolve a value out of the container.
+     *
+     * @throws Exception
+     */
+    public function get(string $key): mixed
     {
         if (!isset($this->bindings[$key])) {
-            // can we do some magic??
-
             if (class_exists($key)) {
-                return $this->make($key);
-            } 
+                return $this->build($key);
+            }
 
-            throw new Exception('No binding was registered for ' . $key);
+            throw new Exception("No binding was registered for {$key}");
         }
 
         $binding = $this->bindings[$key];
-
 
         if ($binding['shared'] && isset($this->singletons[$key])) {
             return $this->singletons[$key];
         }
 
-        if ($binding['concrete'] instanceof Closure) {
-        
-            if ($binding['shared']) {
-                $this->singletons[$key] = $binding['concrete'];
-            }
-            return $binding['concrete']();
+        if (!$binding['concrete'] instanceof Closure) {
+            return $binding['concrete'];
         }
 
-        return $binding['concrete'];
+        return tap($binding['concrete'](), function ($concrete) use ($binding, $key) {
+            if ($binding['shared']) {
+                $this->singletons[$key] = $concrete;
+            }
+        });
     }
 
-    protected function make(string $key): mixed
+    /**
+     * Instantiate a class and its dependencies.
+     *
+     * @throws Exception
+     */
+    protected function build(string $class): mixed
     {
-        $reflector = new \ReflectionClass($key);
+        $reflector = new ReflectionClass($class);
 
-        $constructor = $reflector->getConstructor();
-
-        if (!$constructor) {
-            return new $key();
+        if (!$constructor = $reflector->getConstructor()) {
+            return new $class();
         }
 
         $dependencies = [];
 
         foreach ($constructor->getParameters() as $parameter) {
-            $dependency = $parameter->getType()->getName();
+            if ($parameter->isDefaultValueAvailable()) {
+                $dependencies[] = $parameter->getDefaultValue();
 
-            $dependencies[] = $this->make($dependency);
+                continue;
+            }
+
+            if (!$parameter->getType() || !class_exists($dependency = $parameter->getType()?->getName())) {
+                $message = "No binding was registered on {$class} for constructor parameter, \${$parameter->getName()}.";
+
+                throw new Exception($message);
+            }
+
+            $dependencies[] = $this->build($dependency);
         }
 
         return $reflector->newInstanceArgs($dependencies);
