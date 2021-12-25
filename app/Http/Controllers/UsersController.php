@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
+    // protected $property;
+
+    // public function __construct($property)
+    // {
+    //     $this->property = $property;
+    // }
+
     /**
      * Display a listing of the resource.
      *
