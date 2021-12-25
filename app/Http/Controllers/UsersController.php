@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
