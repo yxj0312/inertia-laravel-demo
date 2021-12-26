@@ -2,9 +2,9 @@
 <html lang="en_US">
 <head>
     <title>What's New in Alpine.js</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <div class="max-w-lg mx-auto mt-24">
