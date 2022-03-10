@@ -16,32 +16,30 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   layout: null
 };
-
-function setup(__props, _ref) {
-  var expose = _ref.expose;
-  var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm)({
-    email: '',
-    password: ''
-  });
-
-  var submit = function submit() {
-    form.post('/login');
-  };
-
-  var __returned__ = {
-    form: form,
-    submit: submit,
-    useForm: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm
-  };
-  Object.defineProperty(__returned__, '__isScriptSetup', {
-    enumerable: false,
-    value: true
-  });
-  return __returned__;
-}
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
-  setup: setup
+  setup: function setup(__props, _ref) {
+    var expose = _ref.expose;
+    expose();
+    var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm)({
+      email: '',
+      password: ''
+    });
+
+    var submit = function submit() {
+      form.post('/login');
+    };
+
+    var __returned__ = {
+      form: form,
+      submit: submit,
+      useForm: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
 }));
 
 /***/ }),
