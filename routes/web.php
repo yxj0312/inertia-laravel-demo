@@ -95,6 +95,8 @@ Route::middleware('auth')->group(function () {
     //     User::create($attributes);
 
     //     return redirect('/users');
-    // });    
+    // }); 
+
+    Route::get('/users/{user}', [UsersController::class, 'show']);
 });
 

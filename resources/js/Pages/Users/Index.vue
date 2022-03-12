@@ -19,7 +19,7 @@
                 <td class="px-6 py-4 whitespace-nowrap">
                   <div class="flex items-center">
                     <div>
-                      <div class="text-sm font-medium text-gray-900">{{ user.name }}</div>
+                        <Link :href="`/users/${user.id}`" class="text-sm font-medium text-gray-900">{{ user.name }}</Link>
                     </div>
                   </div>
                 </td>
