@@ -21,19 +21,31 @@
       }
     </code>
   </pre>
+
+  <br>
+
+  <pre>
+    <code>
+      class ExampleAgain
+      {
+        Public function __construct()
+        {
+          //
+        }
+      }
+    </code>
+  </pre>
 </template>
 
 <script>
-import Layout from "../Shared/Layout";
-import { Head } from "@inertiajs/inertia-vue3";
-import hljs from "highlight.js";
-import styles from "highlight.js/styles/github-dark.css"
+// import Layout from "../Shared/Layout";
+// import { Head } from "@inertiajs/inertia-vue3";
+import { highlight } from "@/Services/SyntaxHighlighting" 
 
 export default {
   // layout: Layout
   mounted() {
-    hljs.highlightAll();
-    console.log(styles);
+    highlight();
   }
 }
 </script>

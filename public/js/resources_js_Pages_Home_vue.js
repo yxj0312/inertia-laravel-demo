@@ -11,19 +11,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.vue");
-/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
-/* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! highlight.js */ "./node_modules/highlight.js/es/index.js");
-/* harmony import */ var highlight_js_styles_github_dark_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! highlight.js/styles/github-dark.css */ "./node_modules/highlight.js/styles/github-dark.css");
-
-
-
+/* harmony import */ var _Services_SyntaxHighlighting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Services/SyntaxHighlighting */ "./resources/js/Services/SyntaxHighlighting.js");
+// import Layout from "../Shared/Layout";
+// import { Head } from "@inertiajs/inertia-vue3";
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   // layout: Layout
   mounted: function mounted() {
-    highlight_js__WEBPACK_IMPORTED_MODULE_2__["default"].highlightAll();
-    console.log(highlight_js_styles_github_dark_css__WEBPACK_IMPORTED_MODULE_3__["default"]);
+    (0,_Services_SyntaxHighlighting__WEBPACK_IMPORTED_MODULE_0__.highlight)();
   }
 });
 
@@ -64,6 +59,14 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("    "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("code", null, "\r\n      class ExampleAgain\r\n      {\r\n        Public function __construct()\r\n        {\r\n          //\r\n        }\r\n      }\r\n    "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("\r\n  ")], -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
 
@@ -74,9 +77,41 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), _hoisted_3, _hoisted_4], 64
+  }), _hoisted_3, _hoisted_4, _hoisted_5, _hoisted_6], 64
   /* STABLE_FRAGMENT */
   );
+}
+
+/***/ }),
+
+/***/ "./resources/js/Services/SyntaxHighlighting.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/Services/SyntaxHighlighting.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "highlight": () => (/* binding */ highlight)
+/* harmony export */ });
+/* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! highlight.js */ "./node_modules/highlight.js/es/index.js");
+/* harmony import */ var highlight_js_styles_github_dark_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! highlight.js/styles/github-dark.css */ "./node_modules/highlight.js/styles/github-dark.css");
+/* harmony import */ var highlight_js_lib_languages_javascript__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! highlight.js/lib/languages/javascript */ "./node_modules/highlight.js/es/languages/javascript.js");
+/* harmony import */ var highlight_js_lib_languages_php__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! highlight.js/lib/languages/php */ "./node_modules/highlight.js/es/languages/php.js");
+/* harmony import */ var highlight_js_lib_languages_yaml__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! highlight.js/lib/languages/yaml */ "./node_modules/highlight.js/es/languages/yaml.js");
+
+
+
+ // import html from "highlight.js/lib/languages/html"
+
+
+highlight_js__WEBPACK_IMPORTED_MODULE_0__["default"].registerLanguage("php", highlight_js_lib_languages_php__WEBPACK_IMPORTED_MODULE_2__["default"]);
+highlight_js__WEBPACK_IMPORTED_MODULE_0__["default"].registerLanguage("javascript", highlight_js_lib_languages_javascript__WEBPACK_IMPORTED_MODULE_1__["default"]); // hljs.registerLanguage("html", html)
+
+highlight_js__WEBPACK_IMPORTED_MODULE_0__["default"].registerLanguage("yaml", highlight_js_lib_languages_yaml__WEBPACK_IMPORTED_MODULE_3__["default"]);
+function highlight() {
+  highlight_js__WEBPACK_IMPORTED_MODULE_0__["default"].highlightAll();
+  console.log(highlight_js_styles_github_dark_css__WEBPACK_IMPORTED_MODULE_4__["default"]);
 }
 
 /***/ }),
