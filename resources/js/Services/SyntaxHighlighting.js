@@ -11,7 +11,19 @@ hljs.registerLanguage("javascript", javascript)
 // hljs.registerLanguage("html", html)
 hljs.registerLanguage("yaml", yaml)
 
-export function highlight() {
+export function highlightAll() {
     hljs.highlightAll();
     console.log(styles);
+}
+
+export function highlight(selector) {
+    if (! selector) {
+        hljs.highlightAll();
+        console.log(styles);
+        
+        return;
+    }
+    document.querySelectorAll(selector + ' pre code').forEach(element => {
+        hljs.highlightElement(element)
+    })
 }

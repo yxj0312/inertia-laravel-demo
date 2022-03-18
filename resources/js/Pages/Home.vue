@@ -24,28 +24,32 @@
 
   <br>
 
-  <pre>
-    <code>
-      class ExampleAgain
-      {
-        Public function __construct()
+  <div id="example2">
+    <pre>
+      <code>
+        class ExampleAgain
         {
-          //
+          Public function __construct()
+          {
+            //
+          }
         }
-      }
-    </code>
-  </pre>
+      </code>
+    </pre>
+  </div>
 </template>
 
 <script>
 // import Layout from "../Shared/Layout";
 // import { Head } from "@inertiajs/inertia-vue3";
+import { highlightAll } from "@/Services/SyntaxHighlighting" 
 import { highlight } from "@/Services/SyntaxHighlighting" 
 
 export default {
   // layout: Layout
   mounted() {
-    highlight();
+    // highlightAll();
+    highlight('#example2');
   }
 }
 </script>
