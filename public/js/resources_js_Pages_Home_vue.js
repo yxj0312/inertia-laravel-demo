@@ -20,7 +20,8 @@ __webpack_require__.r(__webpack_exports__);
   // layout: Layout
   mounted: function mounted() {
     // highlightAll();
-    (0,_Services_SyntaxHighlighting__WEBPACK_IMPORTED_MODULE_0__.highlight)('#example2');
+    // highlight('#example2');
+    (0,_Services_SyntaxHighlighting__WEBPACK_IMPORTED_MODULE_0__.highlightElement)(this.$refs.code);
   }
 });
 
@@ -65,11 +66,17 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_6 = {
   id: "example2"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("      "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("code", null, "\r\n        class ExampleAgain\r\n        {\r\n          Public function __construct()\r\n          {\r\n            //\r\n          }\r\n        }\r\n      "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("\r\n    ")])], -1
-/* HOISTED */
-);
+};
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("      ");
+
+var _hoisted_8 = {
+  ref: "code"
+};
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("\r\n    ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
@@ -81,7 +88,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), _hoisted_3, _hoisted_4, _hoisted_5, _hoisted_6], 64
+  }), _hoisted_3, _hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", null, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("code", _hoisted_8, "\r\n        class ExampleAgain\r\n        {\r\n          Public function __construct()\r\n          {\r\n            //\r\n          }\r\n        }\r\n      ", 512
+  /* NEED_PATCH */
+  ), _hoisted_9])])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -97,7 +106,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "highlight": () => (/* binding */ highlight),
-/* harmony export */   "highlightAll": () => (/* binding */ highlightAll)
+/* harmony export */   "highlightAll": () => (/* binding */ highlightAll),
+/* harmony export */   "highlightElement": () => (/* binding */ highlightElement)
 /* harmony export */ });
 /* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! highlight.js */ "./node_modules/highlight.js/es/index.js");
 /* harmony import */ var highlight_js_styles_github_dark_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! highlight.js/styles/github-dark.css */ "./node_modules/highlight.js/styles/github-dark.css");
@@ -125,9 +135,10 @@ function highlight(selector) {
     return;
   }
 
-  document.querySelectorAll(selector + ' pre code').forEach(function (element) {
-    highlight_js__WEBPACK_IMPORTED_MODULE_0__["default"].highlightElement(element);
-  });
+  document.querySelectorAll(selector + ' pre code').forEach(highlightElement);
+}
+function highlightElement(element) {
+  highlight_js__WEBPACK_IMPORTED_MODULE_0__["default"].highlightElement(element);
 }
 
 /***/ }),

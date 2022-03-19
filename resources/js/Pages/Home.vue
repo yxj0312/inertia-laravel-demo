@@ -26,7 +26,7 @@
 
   <div id="example2">
     <pre>
-      <code>
+      <code ref="code">
         class ExampleAgain
         {
           Public function __construct()
@@ -43,13 +43,14 @@
 // import Layout from "../Shared/Layout";
 // import { Head } from "@inertiajs/inertia-vue3";
 import { highlightAll } from "@/Services/SyntaxHighlighting" 
-import { highlight } from "@/Services/SyntaxHighlighting" 
+import { highlight, highlightElement } from "@/Services/SyntaxHighlighting" 
 
 export default {
   // layout: Layout
   mounted() {
     // highlightAll();
-    highlight('#example2');
+    // highlight('#example2');
+    highlightElement(this.$refs.code);
   }
 }
 </script>
