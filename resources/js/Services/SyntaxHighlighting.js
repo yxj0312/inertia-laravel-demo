@@ -1,4 +1,6 @@
-import hljs from "highlight.js";
+/* can use common instead following specific settings   */
+// import hljs from "highlight.js/lib/common";
+import hljs from "highlight.js/lib/core";
 import styles from "highlight.js/styles/github-dark.css"
 import javascript from "highlight.js/lib/languages/javascript"
 import php from "highlight.js/lib/languages/php"

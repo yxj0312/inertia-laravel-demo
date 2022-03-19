@@ -10,7 +10,9 @@
 
   <h1 class="text-3xl">Blog</h1>
 
-  <pre>
+  <Highlight :code="snippet" />
+
+  <!-- <pre>
     <code>
       class Example
       {
@@ -20,11 +22,11 @@
         }
       }
     </code>
-  </pre>
+  </pre> -->
 
-  <br>
+  <!-- <br> -->
 
-  <div id="example2">
+  <!-- <div id="example2">
     <pre>
       <code ref="code">
         class ExampleAgain
@@ -36,21 +38,34 @@
         }
       </code>
     </pre>
-  </div>
+  </div> -->
 </template>
 
-<script>
+<!-- <script>
 // import Layout from "../Shared/Layout";
 // import { Head } from "@inertiajs/inertia-vue3";
-import { highlightAll } from "@/Services/SyntaxHighlighting" 
-import { highlight, highlightElement } from "@/Services/SyntaxHighlighting" 
+// import { highlightAll } from "@/Services/SyntaxHighlighting" 
+// import { highlight, highlightElement } from "@/Services/SyntaxHighlighting" 
 
-export default {
-  // layout: Layout
-  mounted() {
-    // highlightAll();
-    // highlight('#example2');
-    highlightElement(this.$refs.code);
+// export default {
+//   // layout: Layout
+//   mounted() {
+//     // highlightAll();
+//     // highlight('#example2');
+//     highlightElement(this.$refs.code);
+//   }
+}
+</script> -->
+
+<script setup>
+import Highlight from "@/Components/Highlight"
+let snippet = `
+class Example
+{
+  Public function __construct()
+  {
+    //
   }
 }
+`.trim()
 </script>
