@@ -16,21 +16,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    code: String
+  },
   setup: function setup(__props, _ref) {
-    var _this = this;
-
     var expose = _ref.expose;
     expose();
-
-    defineProps: ({
-      code: String
-    }), (0,vue__WEBPACK_IMPORTED_MODULE_1__.onMounted)(function () {
-      (0,_Services_SyntaxHighlighting__WEBPACK_IMPORTED_MODULE_0__.highlightElement)(_this.$refs.code);
+    var block = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(null);
+    (0,vue__WEBPACK_IMPORTED_MODULE_1__.onMounted)(function () {
+      (0,_Services_SyntaxHighlighting__WEBPACK_IMPORTED_MODULE_0__.highlightElement)(block.value);
     });
-
     var __returned__ = {
+      block: block,
       highlightElement: _Services_SyntaxHighlighting__WEBPACK_IMPORTED_MODULE_0__.highlightElement,
-      onMounted: vue__WEBPACK_IMPORTED_MODULE_1__.onMounted
+      onMounted: vue__WEBPACK_IMPORTED_MODULE_1__.onMounted,
+      ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -87,8 +87,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("pre", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("code", {
-    ref: "code"
-  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.code), 513
+    ref: "block"
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.code), 513
   /* TEXT, NEED_PATCH */
   )]);
 }

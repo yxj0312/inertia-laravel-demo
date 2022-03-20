@@ -1,15 +1,19 @@
 <template>
-    <pre><code ref="code">{{ code }}</code></pre>
+    <pre><code ref="block">{{ code }}</code></pre>
 </template>
 
 <script setup>
 import { highlightElement } from "@/Services/SyntaxHighlighting"
-import {onMounted} from "vue"
+import {onMounted, ref} from "vue"
 
-defineProps: ({
+defineProps({
     code: String
-}),
+});
+
+let block = ref(null);
+
+
 onMounted(() => {
-    highlightElement(this.$refs.code);
+    highlightElement(block.value);
 })
 </script>
