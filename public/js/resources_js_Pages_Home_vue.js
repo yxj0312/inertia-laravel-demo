@@ -87,8 +87,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", {
-  "class": "bg-gray-800 text-white flex justify-end"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", null, "Copy")], -1
+  "class": "bg-gray-800 text-white flex justify-end px-2 py-1 text-xs border-b border-grey-700"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "hover:bg-gray-600 rounded px-2"
+}, "Copy")], -1
 /* HOISTED */
 );
 
