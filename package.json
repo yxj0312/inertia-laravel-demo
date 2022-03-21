@@ -11,11 +11,13 @@
     },
     "devDependencies": {
         "@vue/compiler-sfc": "^3.2.20",
+        "autoprefixer": "^10.4.4",
         "axios": "^0.21",
         "highlight.js": "^11.5.0",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
+        "postcss": "^8.4.12",
+        "tailwindcss": "^3.0.23",
         "vue-loader": "^16.2.0"
     },
     "dependencies": {
