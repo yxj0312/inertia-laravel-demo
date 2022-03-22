@@ -44,14 +44,15 @@
     <p>The current time is {{ time }}.</p>
 
     <Link href="/users" class="text-blue-500" preserve-scroll>Refresh</Link>
+
   </div>
 
   <!-- Paginator -->
-  <Pagination :links="users.links" class="mt-6"/>
+  <Pagination :links="users.meta.links" class="mt-6"/>
 </template>
 
 <script setup>
-import {ref, watch, defineAsyncComponent} from 'vue';
+import {ref, watch, defineAsyncComponent, onMounted} from 'vue';
 import {Inertia} from '@inertiajs/inertia'
 import debounce from 'lodash/debounce';
 import throttle from "lodash/throttle";
@@ -76,6 +77,10 @@ watch(search,debounce(function (value) {
     );
   }, 300)
 )
+
+onMounted(()=> {
+  console.log(Inertia.page)
+})
 
 // Each 500ms trigger it
 // watch(search,throttle(function (value) {

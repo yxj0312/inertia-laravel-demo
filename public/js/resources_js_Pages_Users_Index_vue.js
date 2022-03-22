@@ -44,7 +44,10 @@ __webpack_require__.r(__webpack_exports__);
         preserveState: true,
         replace: true
       });
-    }, 300)); // Each 500ms trigger it
+    }, 300));
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
+      console.log(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.page);
+    }); // Each 500ms trigger it
     // watch(search,throttle(function (value) {
     //     Inertia.get(
     //       '/users',
@@ -69,6 +72,7 @@ __webpack_require__.r(__webpack_exports__);
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       watch: vue__WEBPACK_IMPORTED_MODULE_0__.watch,
       defineAsyncComponent: vue__WEBPACK_IMPORTED_MODULE_0__.defineAsyncComponent,
+      onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
       Inertia: _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia,
       debounce: (lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default()),
       throttle: (lodash_throttle__WEBPACK_IMPORTED_MODULE_3___default())
@@ -222,7 +226,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Paginator "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Pagination"], {
-    links: $props.users.links,
+    links: $props.users.meta.links,
     "class": "mt-6"
   }, null, 8
   /* PROPS */
