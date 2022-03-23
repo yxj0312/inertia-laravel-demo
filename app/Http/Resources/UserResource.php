@@ -21,6 +21,7 @@ class UserResource extends JsonResource
             'created_at' => $this->created_at,
             // 'posts' => PostResource::collection($this->posts),
             // 'posts' => PostResource::collection($this->whenLoaded('posts')),
+            // 'follows' => $this->follows()->pluck('id'),
             'can' => [
                 'edit' => Auth::user()->can('edit', $this->resource)
             ],

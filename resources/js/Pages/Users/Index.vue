@@ -56,6 +56,7 @@ import {ref, watch, defineAsyncComponent, onMounted} from 'vue';
 import {Inertia} from '@inertiajs/inertia'
 import debounce from 'lodash/debounce';
 import throttle from "lodash/throttle";
+import {useCurrentUser} from "@/Composable/useCurrentUser"
 
 let Pagination = defineAsyncComponent(()=> {
   return import('@/Shared/Pagination.vue')
@@ -79,7 +80,7 @@ watch(search,debounce(function (value) {
 )
 
 onMounted(()=> {
-  console.log(Inertia.page)
+ console.log(useCurrentUser)
 })
 
 // Each 500ms trigger it

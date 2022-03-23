@@ -17,6 +17,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/throttle */ "./node_modules/lodash/throttle.js");
 /* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_throttle__WEBPACK_IMPORTED_MODULE_3__);
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/Composable/useCurrentUser'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
 
 
 
@@ -46,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     }, 300));
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
-      console.log(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.page);
+      console.log(Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/Composable/useCurrentUser'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
     }); // Each 500ms trigger it
     // watch(search,throttle(function (value) {
     //     Inertia.get(
@@ -75,7 +77,8 @@ __webpack_require__.r(__webpack_exports__);
       onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
       Inertia: _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia,
       debounce: (lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default()),
-      throttle: (lodash_throttle__WEBPACK_IMPORTED_MODULE_3___default())
+      throttle: (lodash_throttle__WEBPACK_IMPORTED_MODULE_3___default()),
+      useCurrentUser: Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/Composable/useCurrentUser'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
