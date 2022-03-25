@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ThreadsController;
 use App\Http\Controllers\UsersController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -98,5 +99,8 @@ Route::middleware('auth')->group(function () {
     // }); 
 
     Route::get('/users/{user}', [UsersController::class, 'show']);
+
+    Route::get('/threads', [ThreadsController::class, 'index']);
+
 });
 

@@ -56,7 +56,7 @@ import {ref, watch, defineAsyncComponent, onMounted} from 'vue';
 import {Inertia} from '@inertiajs/inertia'
 import debounce from 'lodash/debounce';
 import throttle from "lodash/throttle";
-import {useCurrentUser} from "@/Composable/useCurrentUser"
+import {useCurrentUser} from "@/Composables/useCurrentUser"
 
 let Pagination = defineAsyncComponent(()=> {
   return import('@/Shared/Pagination.vue')

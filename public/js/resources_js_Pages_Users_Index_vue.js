@@ -17,7 +17,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/throttle */ "./node_modules/lodash/throttle.js");
 /* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_throttle__WEBPACK_IMPORTED_MODULE_3__);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/Composable/useCurrentUser'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _Composables_useCurrentUser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Composables/useCurrentUser */ "./resources/js/Composables/useCurrentUser.js");
 
 
 
@@ -48,7 +48,7 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
       });
     }, 300));
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
-      console.log(Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/Composable/useCurrentUser'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+      console.log(_Composables_useCurrentUser__WEBPACK_IMPORTED_MODULE_4__.useCurrentUser);
     }); // Each 500ms trigger it
     // watch(search,throttle(function (value) {
     //     Inertia.get(
@@ -78,7 +78,7 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
       Inertia: _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia,
       debounce: (lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default()),
       throttle: (lodash_throttle__WEBPACK_IMPORTED_MODULE_3___default()),
-      useCurrentUser: Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/Composable/useCurrentUser'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+      useCurrentUser: _Composables_useCurrentUser__WEBPACK_IMPORTED_MODULE_4__.useCurrentUser
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -237,6 +237,79 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* STABLE_FRAGMENT */
   );
 }
+
+/***/ }),
+
+/***/ "./resources/js/Composables/useCurrentUser.js":
+/*!****************************************************!*\
+  !*** ./resources/js/Composables/useCurrentUser.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useCurrentUser": () => (/* binding */ useCurrentUser)
+/* harmony export */ });
+/* harmony import */ var _Models_User__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Models/User */ "./resources/js/Models/User.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+
+
+function useCurrentUser() {
+  return new _Models_User__WEBPACK_IMPORTED_MODULE_0__["default"](_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.page.props.auth.user);
+}
+
+/***/ }),
+
+/***/ "./resources/js/Models/User.js":
+/*!*************************************!*\
+  !*** ./resources/js/Models/User.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ User)
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+var User = /*#__PURE__*/function () {
+  function User() {
+    var attributes = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+    _classCallCheck(this, User);
+
+    Object.assign(this, attributes);
+  }
+
+  _createClass(User, [{
+    key: "follows",
+    value: function follows(user) {
+      return true;
+    }
+  }, {
+    key: "is",
+    value: function is(user) {
+      return this.id === user.id;
+    }
+  }, {
+    key: "planLabel",
+    value: function planLabel() {}
+  }, {
+    key: "hasPrivateProfile",
+    value: function hasPrivateProfile() {}
+  }, {
+    key: "isAlifer",
+    value: function isAlifer() {}
+  }]);
+
+  return User;
+}();
+
+
 
 /***/ }),
 

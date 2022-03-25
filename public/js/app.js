@@ -573,6 +573,14 @@ var map = {
 		"./resources/js/Pages/Settings.vue",
 		"resources_js_Pages_Settings_vue"
 	],
+	"./Threads/Index": [
+		"./resources/js/Pages/Threads/Index.vue",
+		"resources_js_Pages_Threads_Index_vue"
+	],
+	"./Threads/Index.vue": [
+		"./resources/js/Pages/Threads/Index.vue",
+		"resources_js_Pages_Threads_Index_vue"
+	],
 	"./Users/Create": [
 		"./resources/js/Pages/Users/Create.vue",
 		"resources_js_Pages_Users_Create_vue"
