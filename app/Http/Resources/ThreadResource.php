@@ -15,7 +15,10 @@ class ThreadResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'author' => $this->author,
+            'author' => UserResource::make($this->author),
+            // 'author' => [
+            //     'name' => $this->author->name
+            // ],
             'title' => $this->title,
             'body' => $this-> body,
         ];
