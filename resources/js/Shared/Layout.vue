@@ -16,6 +16,7 @@
 
         <p class="text-sm ml-4">
           Welcome Back, {{ username }}!
+          Latest Thread: <Link href="#" v-text="$page.props.latestThread.title"/>
         </p>
       </div>
 

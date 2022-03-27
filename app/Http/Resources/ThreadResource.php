@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Arr;
 
 class ThreadResource extends JsonResource
 {
@@ -22,5 +23,13 @@ class ThreadResource extends JsonResource
             'title' => $this->title,
             'body' => $this-> body,
         ];
+    }
+
+    public function only(...$attributes)
+    {
+        return Arr::only($this->resolve(), $attributes);
+        // return collect($this->resolve())
+        //     ->only($attributes)
+        //     ->toArray();
     }
 }
